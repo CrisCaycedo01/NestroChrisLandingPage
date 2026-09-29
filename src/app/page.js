@@ -435,6 +435,57 @@ export default function Home () {
 
       </section>
 
+      {/* ================= FOOTER ================= */}
+
+      <footer className="footer">
+
+        <div className="footerTop">
+
+          <div className="footerBrand">
+            <div className="footerLogo">
+              CW
+            </div>
+
+            <div>
+              <strong>Chris Wine</strong>
+              <p>Momentos que merecen recordarse.</p>
+            </div>
+          </div>
+
+
+          <div className="footerNav">
+            <a href="#historia">Nosotros</a>
+            <a href="#vino">El vino</a>
+            <a href="#preguntas">Preguntas</a>
+            <a href="#contacto">Contacto</a>
+          </div>
+
+
+          <div className="footerContact">
+            <span>HABLEMOS</span>
+
+            <a href="tel:+573111111111">
+              +57 311 111 1111
+            </a>
+          </div>
+
+        </div>
+
+
+        <div className="footerBottom">
+
+          <p>
+            © 2026 Chris Wine. Todos los derechos reservados.
+          </p>
+
+          <p>
+            Hecho para compartir buenos momentos.
+          </p>
+
+        </div>
+
+      </footer>
+
 
     </main>
 
@@ -1326,6 +1377,135 @@ export default function Home () {
     color: #bba6a3;
 }
 
+/* FOOTER */
+
+.footer {
+    padding: 70px 7% 30px;
+
+    background: #1d0d10;
+    color: #f4eae4;
+}
+
+.footerTop {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+
+    gap: 70px;
+
+    padding-bottom: 55px;
+
+    border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+
+/* MARCA */
+
+.footerBrand {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+.footerLogo {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(255,255,255,.35);
+
+    font-family: Georgia, serif;
+    font-size: 18px;
+}
+
+.footerBrand strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.footerBrand p {
+    font-size: 11px;
+    line-height: 1.5;
+
+    color: #aa9693;
+}
+
+
+/* NAVEGACIÓN */
+
+.footerNav {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.footerNav a {
+    width: fit-content;
+
+    font-size: 12px;
+
+    color: #c9b6b3;
+
+    transition: .2s;
+}
+
+.footerNav a:hover {
+    color: #ffffff;
+}
+
+
+/* CONTACTO */
+
+.footerContact {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+.footerContact span {
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    color: #c69a91;
+}
+
+.footerContact a {
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    color: #ffffff;
+}
+
+
+/* PARTE INFERIOR */
+
+.footerBottom {
+    padding-top: 25px;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    font-size: 9px;
+    letter-spacing: 1px;
+
+    color: #816e6c;
+}
+
                 /* RESPONSIVE */
 
                 @media (max-width: 850px) {
@@ -1441,6 +1621,24 @@ export default function Home () {
 
 .contactText h2 {
     font-size: 46px;
+}
+
+.footer {
+    padding: 60px 7% 25px;
+}
+
+.footerTop {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    padding-bottom: 40px;
+}
+
+.footerBottom {
+    flex-direction: column;
+
+    gap: 10px;
 }
 
                 }
