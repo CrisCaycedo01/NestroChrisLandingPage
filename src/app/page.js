@@ -1,91 +1,91 @@
-export default function Home() {
-    return (
-        <>
-            <main>
+export default function Home () {
+  return (
+    <>
+      <main>
 
-                {/* ================= HEADER ================= */}
+        {/* ================= HEADER ================= */}
 
-                <header className="header">
-                    <div className="logo">
-                        CW <span>Chris Wine</span>
-                    </div>
+        <header className="header">
+          <div className="logo">
+            CW <span>Chris Wine</span>
+          </div>
 
-                    <nav>
-                        <a href="#historia">Nosotros</a>
-                        <a href="#vino">El vino</a>
-                        <a href="#preguntas">Preguntas</a>
-                    </nav>
+          <nav>
+            <a href="#historia">Nosotros</a>
+            <a href="#vino">El vino</a>
+            <a href="#preguntas">Preguntas</a>
+          </nav>
 
-                    <a href="#contacto" className="headerButton">
-                        Quiero una experiencia
-                    </a>
-                </header>
+          <a href="tel:+573111111111" className="headerButton">
+            +57 311 111 1111
+          </a>
+        </header>
 
 
-                {/* ================= HERO ================= */}
+        {/* ================= HERO ================= */}
 
-                <section className="hero">
+        <section className="hero">
 
-                    <div className="heroContent">
+          <div className="heroContent">
 
                         <span className="eyebrow">
                             Chris Wine · Para compartir
                         </span>
 
-                        <h1>
-                            Haz espacio para <span>lo extraordinario.</span>
-                        </h1>
+            <h1>
+              Haz espacio para <span>lo extraordinario.</span>
+            </h1>
 
-                        <p>
-                            Los vinos tienen lugar en momentos que queremos recordar.
-                            Chris Wine nace para convertir esos momentos en experiencias
-                            que vale la pena compartir.
-                        </p>
+            <p>
+              Los vinos tienen lugar en momentos que queremos recordar.
+              Chris Wine nace para convertir esos momentos en experiencias
+              que vale la pena compartir.
+            </p>
 
-                        <div className="heroForm">
+            <div className="heroForm">
 
-                            <input
-                                type="text"
-                                placeholder="Tu nombre"
-                            />
+              <input
+                type="text"
+                placeholder="Tu nombre"
+              />
 
-                            <input
-                                type="email"
-                                placeholder="Tu correo"
-                            />
+              <input
+                type="email"
+                placeholder="Tu correo"
+              />
 
-                            <button>
-                                Quiero descubrirlo
-                            </button>
+              <button>
+                Quiero descubrirlo
+              </button>
 
-                        </div>
+            </div>
 
-                    </div>
-
-
-                    <div className="heroVisual">
-
-                        <div className="wineBottle">
-                            <div className="bottleNeck"></div>
-
-                            <div className="bottleBody">
-                                <div className="wineLabel">
-                                    <small>CHRIS</small>
-                                    <strong>WINE</strong>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </section>
-
-            </main>
+          </div>
 
 
-            {/* ================= ESTILOS ================= */}
+          <div className="heroVisual">
 
-            <style>{`
+            <div className="wineBottle">
+              <div className="bottleNeck"></div>
+
+              <div className="bottleBody">
+                <div className="wineLabel">
+                  <small>CHRIS</small>
+                  <strong>WINE</strong>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+      </main>
+
+
+      {/* ================= ESTILOS ================= */}
+
+      <style>{`
 
                 * {
                     box-sizing: border-box;
@@ -410,6 +410,6 @@ export default function Home() {
                 }
 
             `}</style>
-        </>
-    );
+    </>
+  );
 }
