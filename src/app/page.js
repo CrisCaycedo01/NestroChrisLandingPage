@@ -880,6 +880,18 @@ export default function Home () {
     font-size: 44px;
 }
 
+.moments {
+    padding: 70px 7%;
+}
+
+.momentsGrid {
+    grid-template-columns: 1fr;
+}
+
+.momentsHeader h2 {
+    font-size: 44px;
+}
+
 
                 }
 
