@@ -17,7 +17,7 @@ export const metadata = {
   title: "Chris Wine",
   description: "Descubre una experiencia extraordinaria con Chris Wine.",
 };
-
+// Integrate Google Tag Manager
 export default function RootLayout({ children }) {
   return (
     <html
