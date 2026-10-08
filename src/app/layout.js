@@ -1,14 +1,13 @@
-
-import { Geist, Geist_Mono } from "next/font/google";
-import { GoogleTagManager } from "@next/third-parties/google";
+import {Geist, Geist_Mono} from "next/font/google";
+import {GoogleTagManager} from "@next/third-parties/google";
 import "./globals.css";
 
-const geistSans = Geist({
+const geistSans = Geist ({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const geistMono = Geist_Mono ({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -18,16 +17,16 @@ export const metadata = {
   description: "Descubre una experiencia extraordinaria con Chris Wine.",
 };
 // Integrate Google Tag Manager
-export default function RootLayout({ children }) {
+export default function RootLayout ({children}) {
   return (
     <html
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <body>
-        {children}
-        <GoogleTagManager gtmId="GTM-M66T557B" />
-      </body>
+    <body>
+    {children}
+    <GoogleTagManager gtmId="GTM-M66T557B"/>
+    </body>
     </html>
   );
 }

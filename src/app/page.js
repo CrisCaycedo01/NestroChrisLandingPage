@@ -1,3 +1,5 @@
+import HubSpotForm from "../components/HubSpotForm";
+
 export default function Home () {
   return (<>
     <main>
@@ -373,6 +375,7 @@ export default function Home () {
         </div>
 
       </section>
+      d
 
       {/* ================= CONTACTO ================= */}
 
@@ -397,41 +400,10 @@ export default function Home () {
         </div>
 
 
-        <form className="contactForm">
+        <div className="contactForm">
+          <HubSpotForm/>
+        </div>
 
-          <label>
-            Tu nombre
-            <input
-              type="text"
-              placeholder="Escribe tu nombre"
-            />
-          </label>
-
-          <label>
-            Tu correo
-            <input
-              type="email"
-              placeholder="correo@ejemplo.com"
-            />
-          </label>
-
-          <label>
-            Tu mensaje
-            <textarea
-              rows="4"
-              placeholder="Cuéntanos qué ocasión tienes en mente"
-            ></textarea>
-          </label>
-
-          <button type="submit">
-            Enviar mensaje
-          </button>
-
-          <small>
-            Al enviar este formulario aceptas que podamos contactarte.
-          </small>
-
-        </form>
 
       </section>
 
