@@ -407,7 +407,7 @@ export default function Home () {
 
       </section>
 
-      {/* ================= FOOTER ================= */}
+      {/* ================= FOOTER =============== */}
 
       <footer className="footer">
 
