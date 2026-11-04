@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chris Wine
 
-## Getting Started
+Landing page en Next.js. Node.js 20.9 o posterior.
 
-First, run the development server:
+## Desarrollo y validación
 
-```bash
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run lint
+npm run build
+npm run start
+npm audit --omit=dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## SEO y despliegue
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+La URL canónica por defecto es https://nestro-chris-landing-page.vercel.app/.
+Para cambiar de dominio, define `SITE_URL` con la URL absoluta antes de compilar.
+Los metadatos, `/robots.txt` y `/sitemap.xml` se generan en la compilación.
+Tras desplegar, verifica esos endpoints y registra el sitemap en Google Search Console.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Auditoría reproducible
 
-## Learn More
+Con la compilación de producción en http://localhost:3000:
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+npx lighthouse http://localhost:3000 --output=html --output-path=lighthouse-mobile.html
+npx lighthouse http://localhost:3000 --preset=desktop --output=html --output-path=lighthouse-desktop.html
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Los informes contienen datos del entorno local; repetir en la URL pública tras desplegar.
+La puntuación automatizada no sustituye la revisión manual con teclado, zoom y lector de pantalla.
+HubSpot y las etiquetas configuradas en Google Tag Manager siguen activos. Sus cookies,
+recursos y cambios externos pueden afectar buenas prácticas y rendimiento. La accesibilidad
+interna del formulario de HubSpot se debe administrar también desde HubSpot.
+No se han enviado formularios ni modificado el contenedor GTM durante la validación.
+El teléfono existente debe confirmarse antes del lanzamiento.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Cambios
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Metadatos descriptivos, Open Graph, Twitter, canonical, robots y sitemap.
+- Enlace funcional al formulario de contacto en lugar de los campos iniciales sin envío.
+- Regiones semánticas, salto al contenido, foco visible, navegación móvil,
+  contraste y movimiento reducido.
+- Eliminación de fuentes descargadas que el diseño no utilizaba.
+- Aviso de fallo de carga de HubSpot y carga diferida de su script.
+- Actualización de Next.js y dependencias compatibles; auditoría de producción sin vulnerabilidades.
+  Persisten 8 avisos moderados en herramientas de desarrollo; no se aplica la degradación
+  incompatible de ESLint propuesta por `npm audit fix --force`.

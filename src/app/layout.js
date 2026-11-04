@@ -1,33 +1,18 @@
-import {Geist, Geist_Mono} from "next/font/google";
 import {GoogleTagManager} from "@next/third-parties/google";
 import "./globals.css";
 
-const geistSans = Geist ({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono ({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const siteUrl = process.env.SITE_URL || "https://nestro-chris-landing-page.vercel.app";
+const title = "Chris Wine | Vinos para compartir momentos extraordinarios";
+const description = "Conoce Chris Wine: una propuesta de vino para cenas, regalos y celebraciones. Descubre nuestra historia y recibe novedades sobre la próxima experiencia de compra.";
 
 export const metadata = {
-  title: "Chris Wine",
-  description: "Descubre una experiencia extraordinaria con Chris Wine.",
+  title,
+  description,
+  ...(siteUrl ? { metadataBase: new URL(siteUrl), alternates: { canonical: "/" } } : {}),
+  openGraph: { title, description, siteName: "Chris Wine", locale: "es_CO", type: "website", ...(siteUrl ? { url: "/" } : {}) },
+  twitter: { card: "summary", title, description },
 };
-// Integrate Google Tag Manager
-export default function RootLayout ({children}) {
-  return (
-    <html
-      lang="es"
-      className={`${geistSans.variable} ${geistMono.variable}`}
-    >
-    <body>
-    {children}
-    <GoogleTagManager gtmId="GTM-M66T557B"/>
-    </body>
-    </html>
-  );
-}
 
+export default function RootLayout({children}) {
+  return <html lang="es"><body>{children}<GoogleTagManager gtmId="GTM-M66T557B" /></body></html>;
+}

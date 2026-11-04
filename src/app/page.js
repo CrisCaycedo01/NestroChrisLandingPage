@@ -2,7 +2,7 @@ import HubSpotForm from "../components/HubSpotForm";
 
 export default function Home () {
   return (<>
-    <main>
+    <a className="skipLink" href="#contenido">Saltar al contenido</a>
 
       {/* ================= HEADER ================= */}
 
@@ -11,7 +11,7 @@ export default function Home () {
           CW <span>Chris Wine</span>
         </div>
 
-        <nav>
+        <nav aria-label="Navegación principal">
           <a href="#historia">Nosotros</a>
           <a href="#vino">El vino</a>
           <a href="#preguntas">Preguntas</a>
@@ -21,6 +21,7 @@ export default function Home () {
           +57 311 111 1111
         </a>
       </header>
+      <main id="contenido" tabIndex={-1}>
 
 
       {/* ================= HERO ================= */}
@@ -43,28 +44,12 @@ export default function Home () {
             que vale la pena compartir.
           </p>
 
-          <div className="heroForm">
-
-            <input
-              type="text"
-              placeholder="Tu nombre"
-            />
-
-            <input
-              type="email"
-              placeholder="Tu correo"
-            />
-
-            <button>
-              Quiero descubrirlo
-            </button>
-
-          </div>
+          <div className="heroForm"><a href="#contacto" className="ctaButton">Quiero descubrir Chris Wine</a></div>
 
         </div>
 
 
-        <div className="heroVisual">
+        <div className="heroVisual" aria-hidden="true">
 
           <div className="wineBottle">
             <div className="bottleNeck"></div>
@@ -337,7 +322,7 @@ export default function Home () {
           <details className="faqItem">
             <summary>
               ¿Ya puedo comprar Chris Wine?
-              <span>+</span>
+              <span aria-hidden="true">+</span>
             </summary>
 
             <p>
@@ -350,7 +335,7 @@ export default function Home () {
           <details className="faqItem">
             <summary>
               ¿Qué tipo de vino es?
-              <span>+</span>
+              <span aria-hidden="true">+</span>
             </summary>
 
             <p>
@@ -363,7 +348,7 @@ export default function Home () {
           <details className="faqItem">
             <summary>
               ¿Dónde realizan envíos?
-              <span>+</span>
+              <span aria-hidden="true">+</span>
             </summary>
 
             <p>
@@ -375,7 +360,6 @@ export default function Home () {
         </div>
 
       </section>
-      d
 
       {/* ================= CONTACTO ================= */}
 
@@ -409,6 +393,7 @@ export default function Home () {
 
       {/* ================= FOOTER =============== */}
 
+      </main>
       <footer className="footer">
 
         <div className="footerTop">
@@ -457,9 +442,6 @@ export default function Home () {
         </div>
 
       </footer>
-
-
-    </main>
 
 
     {/* ================= ESTILOS ================= */}
@@ -641,7 +623,7 @@ export default function Home () {
 
                     color: #222;
 
-                    outline: none;
+
                 }
 
                 .heroForm button {
@@ -747,7 +729,7 @@ export default function Home () {
                     font-family: Georgia, serif;
                     font-size: 25px;
                 }
-                
+
 /* ENCUENTROS */
 
 .encounters {
@@ -772,7 +754,7 @@ export default function Home () {
     font-size: 10px;
     letter-spacing: 3px;
 
-    color: #856d67;
+    color: #75605a;
 }
 
 .encounters h2 {
@@ -1308,7 +1290,7 @@ export default function Home () {
     padding: 14px;
 
     border: none;
-    outline: none;
+
 
     background: #f3eee7;
     color: #351016;
@@ -1475,7 +1457,7 @@ export default function Home () {
     font-size: 9px;
     letter-spacing: 1px;
 
-    color: #816e6c;
+    color: #bba6a3;
 }
 
                 /* RESPONSIVE */
@@ -1483,7 +1465,9 @@ export default function Home () {
                 @media (max-width: 850px) {
 
                     .header nav {
-                        display: none;
+                        display: flex;
+                        gap: 16px;
+                        flex-wrap: wrap;
                     }
 
                     .hero {
@@ -1515,7 +1499,7 @@ export default function Home () {
                     h1 {
                         font-size: 55px;
                     }
-                    
+
                     .encounters {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1615,6 +1599,24 @@ export default function Home () {
 
                 }
 
+
+.skipLink { position: fixed; top: 8px; left: 8px; z-index: 100; transform: translateY(-160%); padding: 16px; background: #fff; color: #351016; }
+.skipLink:focus { transform: translateY(0); }
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #fff; outline-offset: 3px; box-shadow: 0 0 0 6px #351016; }
+nav a, .footerNav a, .footerContact a { display: inline-flex; align-items: center; min-height: 44px; }
+section[id] { scroll-margin-top: 24px; }
+.heroContent, .contactForm, .faqList { min-width: 0; }
+h1, h2, h3 { overflow-wrap: anywhere; }
+@media (max-width: 850px) {
+ .header { position: relative; height: auto; min-height: 80px; flex-wrap: wrap; gap: 12px; padding: 16px 7%; }
+ .header nav { order: 3; width: 100%; justify-content: center; }
+ .hero { padding-top: 60px; }
+ h1 { font-size: clamp(40px, 10vw, 55px); }
+}
+@media (prefers-reduced-motion: reduce) {
+ html { scroll-behavior: auto; }
+ *, *::before, *::after { transition: none !important; animation: none !important; }
+}
             `}</style>
   </>);
 }
