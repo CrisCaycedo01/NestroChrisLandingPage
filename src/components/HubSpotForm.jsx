@@ -2,15 +2,20 @@
 "use client";
 
 import Script from "next/script";
+import { useState } from "react";
 
 export default function HubSpotForm() {
+  const [failed, setFailed] = useState(false);
   return (
     <div className="hubspotForm">
       <Script
         src="https://js.hsforms.net/forms/embed/52140389.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
+        onError={() => setFailed(true)}
       />
 
+      {failed && <p role="status">No se pudo cargar el formulario. Recarga la página para volver a intentarlo.</p>}
+      <noscript>Activa JavaScript para cargar el formulario de contacto.</noscript>
       <div
         className="hs-form-frame"
         data-region="na1"
